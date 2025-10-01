@@ -40,7 +40,7 @@ public class Main {
             System.out.println("ID : " + b.getId());
             System.out.println("Nama : " + b.getNama());
             System.out.println("Stock : " + b.getStok());
-            System.out.println("Harga : " + b.getHarga());
+            System.out.printf("Harga : %,.0f\n", b.getHarga());
             if (b instanceof Handphone) {
                 System.out.println("Warna : " + ((Handphone)b).getWarna());
             } else if (b instanceof Voucher) {
@@ -81,7 +81,7 @@ public class Main {
             totalHarga = b.getHarga() * jumlah;
         }
 
-        System.out.println(jumlah + " @ " + b.getNama() + " dengan total harga " + totalHarga);
+        System.out.printf("%d @ %s dengan total harga %,.0f\n", jumlah, b.getNama(), totalHarga);
         System.out.print("Masukkan jumlah uang : ");
         double uang = sc.nextDouble(); sc.nextLine();
 
@@ -108,11 +108,11 @@ public class Main {
             if (o.getHandphone() != null) {
                 System.out.println("Nama : " + o.getHandphone().getNama());
                 System.out.println("Jumlah : " + o.getJumlah());
-                System.out.println("Total : " + (o.getJumlah() * o.getHandphone().getHarga()));
+                System.out.printf("Total : %,.0f\n", (o.getJumlah() * o.getHandphone().getHarga()));
             } else {
                 System.out.println("Nama : " + o.getVoucher().getNama());
                 System.out.println("Jumlah : " + o.getJumlah());
-                System.out.println("Total : " + (o.getJumlah() * o.getVoucher().getHargaJual()));
+                System.out.printf("Total : %,.0f\n", (o.getJumlah() * o.getVoucher().getHargaJual()));
             }
             System.out.println("-----------------------------------");
         }
